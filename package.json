@@ -1,8 +1,15 @@
 {
-  "name": "liri",
-  "version": "0.0.5",
+  "name": "LIRI",
+  "version": "1.0.0",
   "description": "node.js highlight",
-  "main": "index.js",
+  "main": "keys.js",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^8.0.0",
+    "moment": "^2.24.0",
+    "node-spotify-api": "^1.1.1"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,19 +17,11 @@
     "type": "git",
     "url": "git+https://github.com/cltn39/LIRI.git"
   },
-  "keywords": [
-    "node.js"
-  ],
-  "author": "chisoo song",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/cltn39/LIRI/issues"
   },
-  "homepage": "https://github.com/cltn39/LIRI#readme",
-  "dependencies": {
-    "axios": "^0.18.0",
-    "dotenv": "^8.0.0",
-    "moment": "^2.24.0",
-    "node-spotify-api": "^1.1.1"
-  }
+  "homepage": "https://github.com/cltn39/LIRI#readme"
 }
