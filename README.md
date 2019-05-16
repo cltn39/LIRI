@@ -38,7 +38,7 @@ _.env file should contain following:_
 
 * node liri.js spotify-this-song '<song name here>'
   
-![Image of concert-this](/images/example/concert-this.png/)
+![Image of concert-this](/images/example/spotify-this-song.png/)
 
 * node liri.js movie-this '<movie name here>'
   
