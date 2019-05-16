@@ -18,5 +18,11 @@
   "bugs": {
     "url": "https://github.com/cltn39/LIRI/issues"
   },
-  "homepage": "https://github.com/cltn39/LIRI#readme"
+  "homepage": "https://github.com/cltn39/LIRI#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^8.0.0",
+    "moment": "^2.24.0",
+    "node-spotify-api": "^1.1.1"
+  }
 }
