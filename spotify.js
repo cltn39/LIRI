@@ -10,8 +10,8 @@ var query = process.argv.slice(3).join(" ");
 
 // spotify key
 var spotify = new Spotify({
-    id: "",
-    secret:"" 
+    id: "9baadd090c594485a28602557d0f348e",
+    secret: "9c5b1cce9bc04580966d71ea8d75a27d"
 });
 
 // switch function for commands
@@ -33,7 +33,7 @@ switch (commands) {
 }
 
 // node liri.js concert-this <artist/band name here>
-function concertThis() {
+function concertThis(query) {
     axios.get("https://rest.bandsintown.com/artists/" + query + "/events?app_id=codingbootcamp").then(
         function (response) {
             //Name of the venue
@@ -48,7 +48,7 @@ function concertThis() {
 }
 
 // node liri.js spotify-this-song '<song name here>'
-function spotifyThisSong() {
+function spotifyThisSong(query) {
     spotify.search({ type: 'track', query: query, limit:1}, function(err, data) {
         if (err) {
           return console.log('Error occurred: ' + err);
@@ -66,7 +66,7 @@ function spotifyThisSong() {
 }
 
 // node liri.js movie-this '<movie name here>'
-function movieThis() {
+function movieThis(query) {
     axios.get("http://www.omdbapi.com/?t=" + query + "&y=&plot=short&apikey=trilogy").then(
         function (response) {
             //* Title of the movie
@@ -95,8 +95,23 @@ function doWhatItSays() {
         if (err) {
             return console.log(err);
         }
-        data = data.split(",")
-
-        console.log("node " + data);
+        data = data.split(',')
+        
+        switch (data[0]) {
+            case "concert-this":
+                concertThis(data[1]);
+                break;
+        
+            case "spotify-this-song":
+                spotifyThisSong(data[1]);
+                break;
+            case "movie-this":
+                movieThis(data[1]);
+                break;
+        
+            case "do-what-it-says":
+                doWhatItSays(data[1]);
+                break;
+        }
     });
 }
