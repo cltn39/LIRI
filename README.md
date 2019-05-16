@@ -8,7 +8,7 @@ node.js highlight
 ## Features
 
 - [x] LIRI will search Spotify for songs, Bands in Town for concerts, and OMDB for movies.
-- [ ] In addition to logging the data to your terminal/bash window, output the data to a .txt file called `log.txt`.
+- [x] In addition to logging the data to your terminal/bash window, output the data to a .txt file called `log.txt`.
 
 ## Node packages used:
 
