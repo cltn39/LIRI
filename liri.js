@@ -9,6 +9,7 @@ var fs = require("fs");
 //grab keywords from command lines
 var commands = process.argv[2];
 var query = process.argv.slice(3).join(" ");
+var fullCommand = commands + " " + query + ": ";
 
 // spotify key
 var spotify = new Spotify(keys.spotify);
@@ -16,7 +17,11 @@ var spotify = new Spotify(keys.spotify);
 // switch function for commands
 switch (commands) {
   case "concert-this":
+    writeLog(fullCommand);
+    // concertThis();
     concertThis();
+    var output = concertThis;
+    writeLog(output);
     break;
 
   case "spotify-this-song":
@@ -30,11 +35,19 @@ switch (commands) {
     doWhatItSays();
     break;
 }
+// write the data into log.txt
+function writeLog(input) {
+  fs.appendFile("log.txt", " " + input, function (err) {
+    if (err) {
+      return console.log(err);
+    }
+  });
+}
 
 // node liri.js concert-this <artist/band name here>
 function concertThis() {
   axios.get("https://rest.bandsintown.com/artists/" + query + "/events?app_id=codingbootcamp").then(
-    function (response) {
+    function read(response) {
       //Name of the venue
       console.log("Venue name: " + response.data[0].venue.name);
       //Venue location

@@ -1,0 +1,13 @@
+ concert-this rock:  function concertThis() {
+  axios.get("https://rest.bandsintown.com/artists/" + query + "/events?app_id=codingbootcamp").then(
+    function read(response) {
+      //Name of the venue
+      console.log("Venue name: " + response.data[0].venue.name);
+      //Venue location
+      console.log("location: " + response.data[0].venue.city + ", " + response.data[0].venue.region + ", " + response.data[0].venue.country);
+      //Date of the Event (use moment to format this as "MM/DD/YYYY")
+      var date = response.data[0].datetime;
+      console.log("Date: " + moment(date).format("MM/DD/YYYY"));
+    }
+  )
+}
