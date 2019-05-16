@@ -4,8 +4,7 @@ var fs = require("fs");
 var commands = process.argv[2];
 var query = process.argv.slice(3).join(" ");
 var spotify = new Spotify({
-    id: "9baadd090c594485a28602557d0f348e",
-    secret: "9c5b1cce9bc04580966d71ea8d75a27d"
+    //add id and secerts
 });
 
 switch (commands) {
