@@ -21,5 +21,12 @@ LIRI will search Spotify for songs, Bands in Town for concerts, and OMDB for mov
 * OMDB API
 * Bands in Town API
 
-## **important**
+# **important**
 **_you must create a .env file containing spotify API keys. You can obtain keys from spotify [here]( https://developer.spotify.com/my-applications/)_**
+
+_.env file must be created in the rooted files **example below**_
+![Image of .env file location](/images/example/file.png/)
+_.env file should contain following:_
+![Image of .env file](/images/example/dotenv.png)
+
+## Demo
