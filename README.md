@@ -32,14 +32,18 @@ _.env file should contain following:_
 
 ## Demo
 
-* node liri.js concert-this <artist/band name here>
+* node liri.js concert-this "artist/band name here"
+
 ![Image of concert-this](/images/example/concert-this.png/)
 
-* node liri.js spotify-this-song '<song name here>'
-![Image of concert-this](/images/example/concert-this.png/)
+* node liri.js spotify-this-song "song name here"
+  
+![Image of concert-this](/images/example/spotify-this-song.png/)
 
-* node liri.js movie-this '<movie name here>'
+* node liri.js movie-this "movie name here"
+  
 ![Image of concert-this](/images/example/movie-this.png/)
+
 * node liri.js do-what-it-says
 
 ![Image of concert-this](/images/example/do-what-it-says.png/)
