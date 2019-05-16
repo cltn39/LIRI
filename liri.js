@@ -31,7 +31,7 @@ switch (commands) {
     break;
 }
 
-// node liri.js concert-this <artist/band name hnodeere>
+// node liri.js concert-this <artist/band name here>
 function concertThis() {
   axios.get("https://rest.bandsintown.com/artists/" + query + "/events?app_id=codingbootcamp").then(
     function (response) {

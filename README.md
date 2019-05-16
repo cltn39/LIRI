@@ -7,7 +7,8 @@ node.js highlight
 
 ## Features
 
-LIRI will search Spotify for songs, Bands in Town for concerts, and OMDB for movies.
+- [x] LIRI will search Spotify for songs, Bands in Town for concerts, and OMDB for movies.
+- [ ] In addition to logging the data to your terminal/bash window, output the data to a .txt file called `log.txt`.
 
 ## Node packages used:
 
@@ -27,6 +28,18 @@ LIRI will search Spotify for songs, Bands in Town for concerts, and OMDB for mov
 _.env file must be created in the rooted files **example below**_
 ![Image of .env file location](/images/example/file.png/)
 _.env file should contain following:_
-![Image of .env file](/images/example/dotenv.png)
+![Image of .env file](/images/example/dotenv.png/)
 
 ## Demo
+
+* node liri.js concert-this <artist/band name here>
+![Image of concert-this](/images/example/concert-this.png/)
+
+* node liri.js spotify-this-song '<song name here>'
+![Image of concert-this](/images/example/concert-this.png/)
+
+* node liri.js movie-this '<movie name here>'
+![Image of concert-this](/images/example/movie-this.png/)
+* node liri.js do-what-it-says
+
+![Image of concert-this](/images/example/do-what-it-says.png/)
