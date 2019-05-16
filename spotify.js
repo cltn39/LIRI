@@ -1,12 +1,20 @@
+//require packages
 var Spotify = require('node-spotify-api');
 var axios = require("axios");
+var moment = require('moment');
 var fs = require("fs");
+
+//grab keywords from command lines
 var commands = process.argv[2];
 var query = process.argv.slice(3).join(" ");
+
+// spotify key
 var spotify = new Spotify({
-    //add id and secerts
+    id: "",
+    secret:"" 
 });
 
+// switch function for commands
 switch (commands) {
     case "concert-this":
         concertThis();
@@ -24,10 +32,22 @@ switch (commands) {
         break;
 }
 
+// node liri.js concert-this <artist/band name here>
 function concertThis() {
-    console.log("hello")
+    axios.get("https://rest.bandsintown.com/artists/" + query + "/events?app_id=codingbootcamp").then(
+        function (response) {
+            //Name of the venue
+            console.log("Venue name: " + response.data[0].venue.name);
+            //Venue location
+            console.log("location: " + response.data[0].venue.city + ", " +  response.data[0].venue.region + ", " +  response.data[0].venue.country);
+            //Date of the Event (use moment to format this as "MM/DD/YYYY")
+            var date = response.data[0].datetime;
+            console.log("Date: " + moment(date).format("MM/DD/YYYY")); 
+        }
+    )
 }
-// Working
+
+// node liri.js spotify-this-song '<song name here>'
 function spotifyThisSong() {
     spotify.search({ type: 'track', query: query, limit:1}, function(err, data) {
         if (err) {
@@ -44,7 +64,8 @@ function spotifyThisSong() {
       console.log("Album title: " + data.tracks.items[0].album.name);
       });    
 }
-// Working
+
+// node liri.js movie-this '<movie name here>'
 function movieThis() {
     axios.get("http://www.omdbapi.com/?t=" + query + "&y=&plot=short&apikey=trilogy").then(
         function (response) {
@@ -68,6 +89,7 @@ function movieThis() {
     );
 }
 
+//node liri.js do-what-it-says
 function doWhatItSays() {
     fs.readFile("random.txt", "utf8", function (err, data) {
         if (err) {
